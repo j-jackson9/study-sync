@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import TaskList from './components/TaskList';
 import './App.css'
 import './styles/TaskInput.css';
 import './styles/TaskList.css';
 import './styles/ScheduleView.css';
-
 
 function App() {
   const [taskName, setTaskName] = useState('');
@@ -22,9 +22,7 @@ function App() {
       setTask([...task,newTask]);
 
       
-      console.log(taskName);
-      console.log(dueDate);
-      console.log(hours);
+     console.log("TASK STATE:", task);
 }
   return (
     <>
@@ -58,7 +56,7 @@ function App() {
 
         <div className="task-list">
           <h1>📌Task List</h1>
-          <label><i>No tasks yet -- add one!</i></label>
+          <TaskList task={task}/>
         </div>
       </div>
 
