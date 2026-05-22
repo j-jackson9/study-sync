@@ -5,8 +5,27 @@ import './styles/TaskList.css';
 import './styles/ScheduleView.css';
 
 
-
 function App() {
+  const [taskName, setTaskName] = useState('');
+  const [dueDate, setDueDate] = useState('');
+  const [hours, setHours] = useState('');
+  const [task, setTask] = useState([]);
+
+  function handleAddTask(e) {
+      e.preventDefault();
+      const newTask = {
+        name: taskName,
+        dueDate,
+        hours
+      };
+
+      setTask([...task,newTask]);
+
+      
+      console.log(taskName);
+      console.log(dueDate);
+      console.log(hours);
+}
   return (
     <>
      <div className="header">
@@ -16,23 +35,23 @@ function App() {
       <div className="task-box">
         <div className="add-task">
           <h1>✅Add Task</h1>
-          <form>
+          <form onSubmit={handleAddTask}>
             <label>Task Name</label>
             <br />
-            <input type="text" className="l1" name="task-name" />
+            <input type="text" className="l1" name="task-name" value={taskName} onChange={(e) => setTaskName(e.target.value)}/>
 
             <br />
             <label>Due Date</label>
             <br />
-            <input type="text" className="l1" name="task-date" />
+            <input type="date" className="l1" name="task-date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
 
             <br />
             <label>Hours Needed</label>
             <br />
-            <input type="text" className="l1" name="task-hours" />
+            <input type="text" className="l1" name="task-hours" value={hours} onChange={(e) => setHours(e.target.value)} />
 
             <div className="btn">
-              <button className="add-button">+Add task</button>
+              <button className="add-button" type='submit'>+Add task</button>
             </div>
           </form>
         </div>
