@@ -54,17 +54,17 @@ function App() {
           <form onSubmit={handleAddTask}>
             <label>Task Name</label>
             <br />
-            <input type="text" className="l1" name="task-name" value={taskName} onChange={(e) => setTaskName(e.target.value)}/>
+            <input type="text" className="l1" name="task-name" value={taskName} onChange={(e) => setTaskName(e.target.value)} required/>
 
             <br />
             <label>Due Date</label>
             <br />
-            <input type="date" className="l1" name="task-date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+            <input type="date" className="l1" name="task-date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required/>
 
             <br />
             <label>Hours Needed</label>
             <br />
-            <input type="text" className="l1" name="task-hours" value={hours} onChange={(e) => setHours(e.target.value)} />
+            <input type="text" className="l1" name="task-hours" value={hours} onChange={(e) => setHours(e.target.value)} required/>
 
             <div className="btn">
               <button className="add-button" type='submit'>+Add task</button>
