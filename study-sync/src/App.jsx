@@ -26,6 +26,10 @@ function App() {
 
       setTask([...task,newTask]);
 
+      setTaskName("");
+  setDueDate("");
+  setHours("");
+
       
      console.log("TASK STATE:", task);
   }
