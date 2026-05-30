@@ -7,7 +7,6 @@ function TaskList ({ task }){
    return (
     <div>
         {task.map((item, index) => (
-          
                 <div key={index} style={{borderBottom: '3px solid rgba(0, 0, 0, 0.15)'}}>
                     <p><strong>Task:</strong> {item.name}</p>
                     <p><strong>Due Date:</strong> {item.dueDate}</p>

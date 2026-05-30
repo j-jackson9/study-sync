@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import TaskList from './components/TaskList';
+import ScheduleView from './components/ScheduleView';
+import RandomColor from "./components/RandomColor";
 import './App.css'
 import './styles/TaskInput.css';
 import './styles/TaskList.css';
@@ -10,20 +12,32 @@ function App() {
   const [dueDate, setDueDate] = useState('');
   const [hours, setHours] = useState('');
   const [task, setTask] = useState([]);
+  const [color, setColor] = useState('')
+  const [sortedSchedule, setSortedSchedule] = useState([]);
 
   function handleAddTask(e) {
       e.preventDefault();
       const newTask = {
         name: taskName,
         dueDate,
-        hours
+        hours,
+        color: RandomColor()
       };
 
       setTask([...task,newTask]);
 
       
      console.log("TASK STATE:", task);
-}
+  }
+
+  function sortSchedule() {
+    let sortedList = [...task];
+
+    sortedList.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+    setSortedSchedule(sortedList);
+
+  }
   return (
     <>
      <div className="header">
@@ -62,11 +76,12 @@ function App() {
 
       <div className="schedule">
         <h1>📝Generated Schedule</h1>
-        <label><i>Your schedule will appear here.</i></label>
+        <ScheduleView sortedSchedule={sortedSchedule}/>
+       
       </div>
 
       <div className="btn">
-        <button className="generate">Generate</button>
+        <button className="generate" onClick={sortSchedule}>Generate</button>
       </div>
     </>
   )
