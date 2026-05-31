@@ -42,3 +42,46 @@
    background-color: rgba(9, 148, 32, 0.8);
   cursor: pointer;
 }
+
+.schedule-box {
+  display: flex;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.color-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+}
+
+.color-dot button {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.mid-box {
+  line-height: 5px;
+  border: 1px red solid;
+}
+.end-box  {
+  display: flex;
+  margin-left: 270px;
+  justify-content: end;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.end-box p {
+  padding: 10px;
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+}

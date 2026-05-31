@@ -1,4 +1,6 @@
+import React from 'react';
 import  RandomColor  from './RandomColor';
+import '../styles/ScheduleView.css';
 
 function ScheduleView({ color, sortedSchedule })
 { 
@@ -10,11 +12,23 @@ function ScheduleView({ color, sortedSchedule })
     return (
         <div>
             {sortedSchedule.map((item, index) => (
-                 <div key={index} style={{ backgroundColor: item.color }}>
-                    <p style={{color:'white',WebkitTextStroke: "0.5px black", textShadow: "0.5px 0.5px 1px black", fontSize: '20px'}}><strong>Task:</strong> {item.name}</p>
-                    <p style={{color:'white',WebkitTextStroke: "0.5px black",textShadow: "0.5px 0.5px 1px black", fontSize: '20px'}}><strong>Hours Needed:</strong> {item.hours}</p>
-                </div>
+                <React.Fragment key={index}>
+                 <div className={'schedule-box'} key={index}>
+                    <div className={'color-dot'}>
+                        <button style={{backgroundColor: item.color}}></button>
+                    </div>
+                    <div className={'mid-box'}>
+                    <h3>{item.name}</h3>
+                    <p style={{color: 'gray'}}>{item.dueDate}</p>
+                    </div>
+                    <div className={'end-box'}>
+                        <p style={{backgroundColor: item.color, color: 'white'}}>{item.hours}H</p>
+                    </div>
+                    
+                </div>  
+                </React.Fragment>
             ))}
+            
         </div>
     )
     
