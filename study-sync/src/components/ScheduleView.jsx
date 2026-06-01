@@ -19,16 +19,14 @@ function ScheduleView({ color, sortedSchedule })
                     </div>
                     <div className={'mid-box'}>
                     <h3>{item.name}</h3>
-                    <p style={{color: 'gray'}}>{item.dueDate}</p>
+                    <p style={{color: 'gray'}}>Due: {item.dueDate}</p>
                     </div>
                     <div className={'end-box'}>
                         <p style={{backgroundColor: item.color, color: 'white'}}>{item.hours}H</p>
                     </div>
-                    
                 </div>  
                 </React.Fragment>
             ))}
-            
         </div>
     )
     

@@ -8,9 +8,7 @@ function TaskList ({ task }){
     <div>
         {task.map((item, index) => (
                 <div key={index} style={{borderBottom: '3px solid rgba(0, 0, 0, 0.15)'}}>
-                    <p><strong>Task:</strong> {item.name}</p>
-                    <p><strong>Due Date:</strong> {item.dueDate}</p>
-                    <p><strong>Hours Needed:</strong> {item.hours}</p>
+                    <p><strong>Task:</strong> {item.name} <button>❌</button></p>
                 </div>
         ))}
     </div>

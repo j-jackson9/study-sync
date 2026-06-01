@@ -64,7 +64,7 @@ function App() {
             <br />
             <label>Hours Needed</label>
             <br />
-            <input type="text" className="l1" name="task-hours" value={hours} onChange={(e) => setHours(e.target.value)} required/>
+            <input type="number" max={9} className="l1" name="task-hours" value={hours} onChange={(e) => setHours(e.target.value)} required/>
 
             <div className="btn">
               <button className="add-button" type='submit'>+Add task</button>
